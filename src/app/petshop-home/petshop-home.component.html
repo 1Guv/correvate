@@ -1,0 +1,39 @@
+<div class="container text-center my-5">
+    <h1>Welcome to the PetShop</h1>
+
+    <button type="button"
+            class="m-3" 
+            (click)="logout()" 
+            mat-raised-button 
+            color="primary">
+            Logout
+    </button>
+
+    <button type="button"
+            class="m-3" 
+            (click)="openAddPetForm()" 
+            mat-raised-button 
+            color="accent">
+            Add Pet
+    </button>
+</div>
+
+<app-form-card title="Pets available">
+   <app-pets-available></app-pets-available>
+</app-form-card>
+
+<app-form-card title="Pets pending">
+    <app-pets-pending></app-pets-pending>
+ </app-form-card>
+
+ <app-form-card title="Pets sold">
+    <app-pets-sold></app-pets-sold>
+ </app-form-card>
+
+ <button type="button"
+      class="m-3" 
+      (click)="openAddPetForm()" 
+      mat-raised-button 
+      color="accent">
+      Add Pet
+</button>

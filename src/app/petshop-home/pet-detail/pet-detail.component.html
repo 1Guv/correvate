@@ -1,0 +1,16 @@
+<app-form-card title="Pet details">
+    <div *ngIf="pet" class="ml-5 text-left">
+        <h3>Name: {{ pet.name }}</h3>
+        <p>ID: {{ pet.id }}</p>
+        <p>Category ID: {{ pet.category.id }}</p>
+        <p>Category Name: {{ pet.category.name }}</p>
+
+        <p>Photo Urls: {{ pet.photoUrls }}</p>
+
+        <span *ngFor="let tag of pet.tags">
+            <p>Tag ID: {{ tag.id }} / Tag Name: {{ tag.name }}</p>
+        </span>
+
+        <h6>Status: {{ pet.status }}</h6>
+    </div>
+</app-form-card>

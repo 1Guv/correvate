@@ -1,0 +1,67 @@
+<mat-dialog-content>
+    
+    <app-form-card title="Add new pet">
+        <form [formGroup]="form">
+            <div formGroupName="addPetForm" class="d-flex flex-column mx-5">
+
+                <mat-form-field appearance="outline" class="">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name">
+                    <mat-error class="text-danger" *ngIf="f.name.touched"> Please enter a valid name</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Categorys</mat-label>
+                    <mat-select placeholder="Category" formControlName="category">
+                        <mat-option *ngFor="let animal of category" [value]="{id: animal.id, name: animal.name}">
+                        {{animal.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="">
+                    <mat-label>Url 1</mat-label>
+                    <input matInput placeholder="Name" formControlName="url1">
+                    <mat-error class="text-danger" *ngIf="f.url1.touched"> Please enter a valid photo url</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="">
+                    <mat-label>Url 2</mat-label>
+                    <input matInput placeholder="Name" formControlName="url2">
+                    <mat-error class="text-danger" *ngIf="f.url2.touched"> Please enter a valid photo url</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="">
+                    <mat-label>Tag 1</mat-label>
+                    <input matInput placeholder="Name" formControlName="tag1">
+                    <mat-error class="text-danger" *ngIf="f.tag1.touched"> Please enter a valid tag</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="">
+                    <mat-label>Tag 2</mat-label>
+                    <input matInput placeholder="Name" formControlName="tag2">
+                    <mat-error class="text-danger" *ngIf="f.tag2.touched"> Please enter a valid tag</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+                    <mat-select placeholder="Status" formControlName="status">
+                        <mat-option *ngFor="let s of status" [value]="s.name">
+                        {{s.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+            </div>
+        </form>
+    </app-form-card>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button color="primary" mat-raised-button [mat-dialog-close]="true" [disabled]="!form.valid" (click)="addPet()" cdkFocusInitial>Add</button>
+</mat-dialog-actions>
+
+    <!-- <pre>{{ form.value | json }}</pre> -->
+

@@ -1,0 +1,24 @@
+<table class="table table-sm table-hover">
+
+    <thead class="bg-info d-flex">
+        <tr class="col-4 text-center px-0" *ngFor="let col of columns">
+            <th scope="col" class="d-block">{{ col.name }}</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr class="d-flex" *ngFor="let item of data">
+            <td class="col-4">{{ item.id }}</td>
+            <td class="col-4"><a [routerLink]="['/pet/', item.id]">{{ item.name }}</a></td>
+            <td class="col-4">{{ item.category.name }}</td>
+        </tr>
+        <div class="d-flex">
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="bg-warning mt-4 col-4">Total: {{ data?.length }}</div>
+        </div>
+    </tbody>
+
+</table>
+
+

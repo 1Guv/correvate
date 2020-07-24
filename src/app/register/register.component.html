@@ -1,0 +1,48 @@
+
+<app-form-card title="Register">
+    <form [formGroup]="form">
+        <div formGroupName="registerForm"  class="d-flex flex-column m-5">
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-error class="text-danger" *ngIf="f.username.touched"> Please enter a valid username</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName">
+                <mat-error class="text-danger" *ngIf="f.firstName.touched"> Please enter a valid first name</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+                <mat-error class="text-danger" *ngIf="f.lastName.touched"> Please enter a valid last name</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error class="text-danger" *ngIf="f.email.touched"> Please enter a valid email</mat-error>
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password">
+                <mat-error class="text-danger" *ngIf="f.password.touched"> Please enter a valid password</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Phone" formControlName="phone">
+                <mat-error class="text-danger" *ngIf="f.phone.touched"> Please enter a valid phone</mat-error>
+            </mat-form-field>
+          
+            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="register()">Register</button>
+            <br>
+            <button mat-stroked-button [routerLink]="'/login'">Login</button>
+            
+        </div>
+    </form>
+</app-form-card>
+

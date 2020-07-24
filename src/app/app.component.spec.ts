@@ -3,33 +3,21 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
-      declarations: [
+      providers: [
         AppComponent
       ],
-    }).compileComponents();
+    })
+    component = TestBed.get(AppComponent);
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'correvate'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('correvate');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('correvate app is running!');
+    expect(component).toBeTruthy();
   });
 });
